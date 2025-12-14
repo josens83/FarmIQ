@@ -1,0 +1,181 @@
+{
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류",
+    "retry": "다시 시도",
+    "cancel": "취소",
+    "confirm": "확인",
+    "save": "저장",
+    "delete": "삭제",
+    "edit": "편집",
+    "close": "닫기",
+    "back": "뒤로",
+    "next": "다음",
+    "previous": "이전",
+    "yes": "예",
+    "no": "아니오"
+  },
+  "game": {
+    "title": "FarmIQ",
+    "subtitle": "스마트팜 시뮬레이션",
+    "newGame": "새 게임",
+    "continueGame": "이어하기",
+    "settings": "설정",
+    "pause": "일시정지",
+    "resume": "재개",
+    "speed": "속도",
+    "day": "일차",
+    "money": "자금",
+    "level": "레벨",
+    "experience": "경험치"
+  },
+  "hud": {
+    "time": "시간",
+    "weather": "날씨",
+    "season": "계절",
+    "notifications": "알림"
+  },
+  "farm": {
+    "title": "농장",
+    "grid": "재배 그리드",
+    "emptyCellHint": "클릭하여 작물 심기",
+    "plantCrop": "작물 심기",
+    "harvest": "수확",
+    "remove": "제거",
+    "water": "물주기"
+  },
+  "crops": {
+    "title": "작물",
+    "select": "작물 선택",
+    "growth": "성장률",
+    "health": "건강도",
+    "quality": "품질",
+    "harvestable": "수확 가능",
+    "daysToHarvest": "수확까지",
+    "stress": "스트레스",
+    "lettuce": "상추",
+    "spinach": "시금치",
+    "basil": "바질",
+    "strawberry": "딸기",
+    "tomato": "토마토",
+    "paprika": "파프리카",
+    "cucumber": "오이",
+    "kale": "케일"
+  },
+  "environment": {
+    "title": "환경",
+    "temperature": "온도",
+    "humidity": "습도",
+    "co2": "CO2",
+    "light": "광량",
+    "soilMoisture": "토양 수분",
+    "ph": "pH",
+    "ec": "EC",
+    "optimal": "최적",
+    "warning": "주의",
+    "danger": "위험"
+  },
+  "equipment": {
+    "title": "장비",
+    "heater": "히터",
+    "cooler": "냉각기",
+    "humidifier": "가습기",
+    "dehumidifier": "제습기",
+    "fan": "환기 팬",
+    "co2Generator": "CO2 발생기",
+    "ledPanel": "LED 패널",
+    "irrigation": "관개 시스템",
+    "nutrientPump": "양액 펌프",
+    "activate": "가동",
+    "deactivate": "정지",
+    "autoMode": "자동 모드",
+    "manualMode": "수동 모드",
+    "powerConsumption": "전력 소비",
+    "efficiency": "효율",
+    "upgrade": "업그레이드",
+    "level": "레벨"
+  },
+  "shop": {
+    "title": "상점",
+    "buy": "구매",
+    "sell": "판매",
+    "seeds": "씨앗",
+    "equipment": "장비",
+    "upgrades": "업그레이드",
+    "price": "가격",
+    "owned": "보유",
+    "locked": "잠김",
+    "unlockAt": "레벨 {{level}}에서 잠금 해제"
+  },
+  "automation": {
+    "title": "자동화",
+    "rules": "규칙",
+    "addRule": "규칙 추가",
+    "editRule": "규칙 편집",
+    "deleteRule": "규칙 삭제",
+    "ruleName": "규칙 이름",
+    "sensor": "센서",
+    "condition": "조건",
+    "threshold": "임계값",
+    "action": "동작",
+    "above": "이상",
+    "below": "이하",
+    "between": "범위",
+    "enabled": "활성화",
+    "disabled": "비활성화"
+  },
+  "notifications": {
+    "harvestReady": "{{crop}} 수확 준비 완료!",
+    "lowHealth": "{{crop}}의 건강도가 낮습니다",
+    "equipmentOff": "자금 부족으로 {{equipment}} 정지됨",
+    "levelUp": "레벨 업! 레벨 {{level}} 달성",
+    "newUnlock": "새로운 {{item}} 잠금 해제!",
+    "eventWarning": "{{event}} 발생!"
+  },
+  "settings": {
+    "title": "설정",
+    "language": "언어",
+    "sound": "효과음",
+    "music": "배경음악",
+    "notifications": "알림",
+    "autoSave": "자동 저장",
+    "tutorial": "튜토리얼 표시",
+    "resetProgress": "진행 상황 초기화"
+  },
+  "tutorial": {
+    "welcome": "FarmIQ에 오신 것을 환영합니다!",
+    "step1": "빈 셀을 클릭하여 첫 번째 작물을 심어보세요.",
+    "step2": "환경 패널에서 온도, 습도 등을 확인하세요.",
+    "step3": "장비를 사용하여 환경을 조절할 수 있습니다.",
+    "step4": "작물이 자라면 수확하여 수익을 얻으세요!",
+    "skip": "튜토리얼 건너뛰기",
+    "finish": "튜토리얼 완료"
+  },
+  "errors": {
+    "generic": "오류가 발생했습니다",
+    "networkError": "네트워크 오류가 발생했습니다",
+    "saveError": "저장 중 오류가 발생했습니다",
+    "loadError": "불러오기 중 오류가 발생했습니다",
+    "insufficientFunds": "자금이 부족합니다",
+    "cellOccupied": "이미 작물이 심어져 있습니다",
+    "notHarvestable": "아직 수확할 수 없습니다"
+  },
+  "quality": {
+    "poor": "하급",
+    "normal": "보통",
+    "good": "상급",
+    "excellent": "최상급"
+  },
+  "seasons": {
+    "spring": "봄",
+    "summer": "여름",
+    "autumn": "가을",
+    "winter": "겨울"
+  },
+  "weather": {
+    "clear": "맑음",
+    "cloudy": "흐림",
+    "rainy": "비",
+    "stormy": "폭풍"
+  }
+}

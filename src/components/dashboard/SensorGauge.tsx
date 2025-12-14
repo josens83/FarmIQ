@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
   Thermometer,
   Droplets,
@@ -78,7 +78,7 @@ const sensorConfig: Record<SensorType, {
   }
 };
 
-export const SensorGauge: React.FC<SensorGaugeProps> = ({
+export const SensorGauge = memo<SensorGaugeProps>(function SensorGauge({
   type,
   value,
   optimalRange,
@@ -86,7 +86,7 @@ export const SensorGauge: React.FC<SensorGaugeProps> = ({
   showTrend = false,
   previousValue,
   compact = false
-}) => {
+}) {
   const config = sensorConfig[type];
 
   // Determine status based on optimal range
@@ -121,10 +121,20 @@ export const SensorGauge: React.FC<SensorGaugeProps> = ({
     else if (diff < -0.1) trend = 'down';
   }
 
+  const statusLabels = {
+    optimal: '정상',
+    warning: '주의',
+    danger: '위험'
+  };
+
   if (compact) {
     return (
-      <div className={`flex items-center gap-2 p-2 rounded-lg ${config.bgColor} ${statusColors[status]} ring-1`}>
-        <span className={config.color}>{config.icon}</span>
+      <div
+        className={`flex items-center gap-2 p-2 rounded-lg ${config.bgColor} ${statusColors[status]} ring-1`}
+        role="status"
+        aria-label={`${config.labelKo}: ${value.toFixed(1)}${unit}, 상태: ${statusLabels[status]}`}
+      >
+        <span className={config.color} aria-hidden="true">{config.icon}</span>
         <div className="flex flex-col">
           <span className="text-xs text-slate-400">{config.labelKo}</span>
           <span className="text-sm font-semibold text-white">
@@ -136,13 +146,21 @@ export const SensorGauge: React.FC<SensorGaugeProps> = ({
   }
 
   return (
-    <div className={`p-4 rounded-xl ${statusColors[status]} ring-2 ${statusPulse[status]}`}>
+    <div
+      className={`p-4 rounded-xl ${statusColors[status]} ring-2 ${statusPulse[status]}`}
+      role="status"
+      aria-label={`${config.labelKo}: ${value.toFixed(1)}${unit}, 상태: ${statusLabels[status]}`}
+      aria-live={status !== 'optimal' ? 'polite' : 'off'}
+    >
       <div className="flex items-start justify-between mb-3">
         <div className={`p-2 rounded-lg ${config.bgColor}`}>
-          <span className={config.color}>{config.icon}</span>
+          <span className={config.color} aria-hidden="true">{config.icon}</span>
         </div>
         {showTrend && trend !== 'stable' && (
-          <span className={trend === 'up' ? 'text-red-400' : 'text-blue-400'}>
+          <span
+            className={trend === 'up' ? 'text-red-400' : 'text-blue-400'}
+            aria-label={trend === 'up' ? '상승 중' : '하락 중'}
+          >
             {trend === 'up' ? '↑' : '↓'}
           </span>
         )}
@@ -167,12 +185,19 @@ export const SensorGauge: React.FC<SensorGaugeProps> = ({
               status === 'optimal' ? 'text-green-400' :
               status === 'warning' ? 'text-yellow-400' : 'text-red-400'
             }`}>
-              {status === 'optimal' ? '정상' : status === 'warning' ? '주의' : '위험'}
+              {statusLabels[status]}
             </span>
           </div>
 
           {/* Visual range indicator */}
-          <div className="mt-2 relative h-2 bg-slate-700 rounded-full overflow-hidden">
+          <div
+            className="mt-2 relative h-2 bg-slate-700 rounded-full overflow-hidden"
+            role="meter"
+            aria-valuenow={value}
+            aria-valuemin={0}
+            aria-valuemax={optimalRange.max * 1.5}
+            aria-label={`${config.labelKo} 게이지`}
+          >
             {/* Optimal range highlight */}
             <div
               className="absolute h-full bg-green-500/30"
@@ -180,6 +205,7 @@ export const SensorGauge: React.FC<SensorGaugeProps> = ({
                 left: `${(optimalRange.min / (optimalRange.max * 1.5)) * 100}%`,
                 width: `${((optimalRange.max - optimalRange.min) / (optimalRange.max * 1.5)) * 100}%`
               }}
+              aria-hidden="true"
             />
             {/* Current value indicator */}
             <div
@@ -191,10 +217,11 @@ export const SensorGauge: React.FC<SensorGaugeProps> = ({
                 left: `${Math.min(100, (value / (optimalRange.max * 1.5)) * 100)}%`,
                 transform: 'translateX(-50%)'
               }}
+              aria-hidden="true"
             />
           </div>
         </div>
       )}
     </div>
   );
-};
+});

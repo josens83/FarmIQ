@@ -1,0 +1,181 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "game": {
+    "title": "FarmIQ",
+    "subtitle": "Smart Farm Simulation",
+    "newGame": "New Game",
+    "continueGame": "Continue",
+    "settings": "Settings",
+    "pause": "Pause",
+    "resume": "Resume",
+    "speed": "Speed",
+    "day": "Day",
+    "money": "Money",
+    "level": "Level",
+    "experience": "Experience"
+  },
+  "hud": {
+    "time": "Time",
+    "weather": "Weather",
+    "season": "Season",
+    "notifications": "Notifications"
+  },
+  "farm": {
+    "title": "Farm",
+    "grid": "Growing Grid",
+    "emptyCellHint": "Click to plant a crop",
+    "plantCrop": "Plant Crop",
+    "harvest": "Harvest",
+    "remove": "Remove",
+    "water": "Water"
+  },
+  "crops": {
+    "title": "Crops",
+    "select": "Select Crop",
+    "growth": "Growth",
+    "health": "Health",
+    "quality": "Quality",
+    "harvestable": "Harvestable",
+    "daysToHarvest": "Days to Harvest",
+    "stress": "Stress",
+    "lettuce": "Lettuce",
+    "spinach": "Spinach",
+    "basil": "Basil",
+    "strawberry": "Strawberry",
+    "tomato": "Tomato",
+    "paprika": "Paprika",
+    "cucumber": "Cucumber",
+    "kale": "Kale"
+  },
+  "environment": {
+    "title": "Environment",
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "co2": "CO2",
+    "light": "Light",
+    "soilMoisture": "Soil Moisture",
+    "ph": "pH",
+    "ec": "EC",
+    "optimal": "Optimal",
+    "warning": "Warning",
+    "danger": "Danger"
+  },
+  "equipment": {
+    "title": "Equipment",
+    "heater": "Heater",
+    "cooler": "Cooler",
+    "humidifier": "Humidifier",
+    "dehumidifier": "Dehumidifier",
+    "fan": "Ventilation Fan",
+    "co2Generator": "CO2 Generator",
+    "ledPanel": "LED Panel",
+    "irrigation": "Irrigation System",
+    "nutrientPump": "Nutrient Pump",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "autoMode": "Auto Mode",
+    "manualMode": "Manual Mode",
+    "powerConsumption": "Power Consumption",
+    "efficiency": "Efficiency",
+    "upgrade": "Upgrade",
+    "level": "Level"
+  },
+  "shop": {
+    "title": "Shop",
+    "buy": "Buy",
+    "sell": "Sell",
+    "seeds": "Seeds",
+    "equipment": "Equipment",
+    "upgrades": "Upgrades",
+    "price": "Price",
+    "owned": "Owned",
+    "locked": "Locked",
+    "unlockAt": "Unlocks at Level {{level}}"
+  },
+  "automation": {
+    "title": "Automation",
+    "rules": "Rules",
+    "addRule": "Add Rule",
+    "editRule": "Edit Rule",
+    "deleteRule": "Delete Rule",
+    "ruleName": "Rule Name",
+    "sensor": "Sensor",
+    "condition": "Condition",
+    "threshold": "Threshold",
+    "action": "Action",
+    "above": "Above",
+    "below": "Below",
+    "between": "Between",
+    "enabled": "Enabled",
+    "disabled": "Disabled"
+  },
+  "notifications": {
+    "harvestReady": "{{crop}} ready to harvest!",
+    "lowHealth": "{{crop}} health is low",
+    "equipmentOff": "{{equipment}} turned off due to insufficient funds",
+    "levelUp": "Level Up! Reached Level {{level}}",
+    "newUnlock": "New {{item}} unlocked!",
+    "eventWarning": "{{event}} occurred!"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "sound": "Sound Effects",
+    "music": "Background Music",
+    "notifications": "Notifications",
+    "autoSave": "Auto Save",
+    "tutorial": "Show Tutorial",
+    "resetProgress": "Reset Progress"
+  },
+  "tutorial": {
+    "welcome": "Welcome to FarmIQ!",
+    "step1": "Click on an empty cell to plant your first crop.",
+    "step2": "Check temperature, humidity, and more in the Environment panel.",
+    "step3": "Use equipment to control the environment.",
+    "step4": "Harvest your crops when ready to earn money!",
+    "skip": "Skip Tutorial",
+    "finish": "Finish Tutorial"
+  },
+  "errors": {
+    "generic": "An error occurred",
+    "networkError": "Network error occurred",
+    "saveError": "Error while saving",
+    "loadError": "Error while loading",
+    "insufficientFunds": "Insufficient funds",
+    "cellOccupied": "Cell is already occupied",
+    "notHarvestable": "Not ready for harvest yet"
+  },
+  "quality": {
+    "poor": "Poor",
+    "normal": "Normal",
+    "good": "Good",
+    "excellent": "Excellent"
+  },
+  "seasons": {
+    "spring": "Spring",
+    "summer": "Summer",
+    "autumn": "Autumn",
+    "winter": "Winter"
+  },
+  "weather": {
+    "clear": "Clear",
+    "cloudy": "Cloudy",
+    "rainy": "Rainy",
+    "stormy": "Stormy"
+  }
+}

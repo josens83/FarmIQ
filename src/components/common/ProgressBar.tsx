@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 interface ProgressBarProps {
   value: number;
@@ -10,7 +10,7 @@ interface ProgressBarProps {
   className?: string;
 }
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({
+export const ProgressBar = memo<ProgressBarProps>(function ProgressBar({
   value,
   max = 100,
   size = 'md',
@@ -18,7 +18,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   showLabel = false,
   label,
   className = ''
-}) => {
+}) {
   const percentage = Math.min(100, Math.max(0, (value / max) * 100));
 
   const sizes = {
@@ -47,20 +47,30 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
     <div className={className}>
       {(showLabel || label) && (
         <div className="flex justify-between items-center mb-1">
-          <span className="text-sm text-slate-400">{label}</span>
+          <span className="text-sm text-slate-400" id={label ? `progress-label-${label.replace(/\s/g, '-')}` : undefined}>
+            {label}
+          </span>
           {showLabel && (
-            <span className="text-sm font-medium text-white">
+            <span className="text-sm font-medium text-white" aria-hidden="true">
               {Math.round(percentage)}%
             </span>
           )}
         </div>
       )}
-      <div className={`w-full bg-slate-700 rounded-full overflow-hidden ${sizes[size]}`}>
+      <div
+        className={`w-full bg-slate-700 rounded-full overflow-hidden ${sizes[size]}`}
+        role="progressbar"
+        aria-valuenow={Math.round(percentage)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label={label || '진행률'}
+      >
         <div
           className={`${sizes[size]} ${colors[color]} rounded-full transition-all duration-500 ease-out shadow-lg ${glowColors[color]}`}
           style={{ width: `${percentage}%` }}
+          aria-hidden="true"
         />
       </div>
     </div>
   );
-};
+});

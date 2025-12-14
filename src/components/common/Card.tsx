@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 interface CardProps {
   children: React.ReactNode;
@@ -7,12 +7,12 @@ interface CardProps {
   hover?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({
+export const Card = memo<CardProps>(function Card({
   children,
   className = '',
   padding = 'md',
   hover = false
-}) => {
+}) {
   const paddings = {
     none: '',
     sm: 'p-3',
@@ -33,7 +33,7 @@ export const Card: React.FC<CardProps> = ({
       {children}
     </div>
   );
-};
+});
 
 interface CardHeaderProps {
   title: string;
