@@ -4,3 +4,4 @@ export * from './crop';
 export * from './equipment';
 export * from './player';
 export * from './game';
+export * from './season';
