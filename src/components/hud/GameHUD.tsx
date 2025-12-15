@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, memo } from 'react';
 import {
   Pause,
   Play,
@@ -8,18 +8,21 @@ import {
   Coins,
   Star,
   Clock,
-  Zap
+  Zap,
+  Menu
 } from 'lucide-react';
 import { useGameStore } from '../../store/gameStore';
 import { usePlayerStore } from '../../store/playerStore';
 import { useEquipmentStore } from '../../store/equipmentStore';
 import { getLevelProgress, getXpToNextLevel } from '../../data/config/levels';
+import { GameMenu } from '../menu';
 import type { GameSpeed } from '../../types';
 
-export const GameHUD: React.FC = () => {
+export const GameHUD = memo(function GameHUD() {
   const { gameTime, setGameSpeed, togglePause } = useGameStore();
   const { money, experience, level } = usePlayerStore();
   const { totalEnergyUsed } = useEquipmentStore();
+  const [showMenu, setShowMenu] = useState(false);
 
   const isNight = gameTime.hour >= 20 || gameTime.hour < 6;
   const levelProgress = getLevelProgress(experience);
@@ -136,8 +139,20 @@ export const GameHUD: React.FC = () => {
               {totalEnergyUsed.toFixed(1)} kWh
             </span>
           </div>
+
+          {/* Menu Button */}
+          <button
+            onClick={() => setShowMenu(true)}
+            className="p-2 bg-slate-800 rounded-lg border border-slate-700 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
+            aria-label="메뉴 열기"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
         </div>
       </div>
+
+      {/* Game Menu Modal */}
+      <GameMenu isOpen={showMenu} onClose={() => setShowMenu(false)} />
     </header>
   );
-};
+});

@@ -6,6 +6,7 @@ import { SensorDashboard, StatisticsDashboard } from '../components/dashboard';
 import { FarmGrid } from '../components/farm';
 import { ControlPanel } from '../components/controls';
 import { TutorialOverlay } from '../components/tutorial';
+import { NotificationToast } from '../components/notifications';
 import { useGameStore } from '../store/gameStore';
 import { GameEngine } from '../game/engine/GameEngine';
 import { Modal } from '../components/common';
@@ -29,6 +30,9 @@ export const GameLayout = memo(function GameLayout() {
     <div className="h-screen flex flex-col bg-slate-900 overflow-hidden">
       {/* Tutorial Overlay */}
       {tutorialProgress.isActive && <TutorialOverlay />}
+
+      {/* Notification Toasts */}
+      <NotificationToast />
 
       {/* Top HUD */}
       <div data-tutorial="time-control">
